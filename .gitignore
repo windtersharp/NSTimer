@@ -14,7 +14,9 @@ xcuserdata
 *.moved-aside
 *.mobileprovision
 DerivedData
+xcshareddata
 .idea/
 # Pods - for those of you who use CocoaPods
 Pods
 Podfile.lock
+

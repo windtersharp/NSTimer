@@ -18,7 +18,7 @@
 
 @implementation WTTimerTarget
 
-- (instancetype)initWithSelector:(SEL)aSelector  sourceTarget:(id)sourceTarget{
+- (instancetype)initWithSelector:(SEL)aSelector  sourceTarget:(id)sourceTarget {
     self = [super init];
     if (self) {
         self.actionBlock = nil;
@@ -28,7 +28,7 @@
     return self;
 }
 
-- (instancetype)initWithBlock:(void(^)(NSTimer *timer))block sourceTarget:(id)sourceTarget{
+- (instancetype)initWithBlock:(void(^)(NSTimer *timer))block sourceTarget:(id)sourceTarget {
     self = [super init];
     if (self) {
         self.actionBlock = block;
@@ -37,7 +37,7 @@
     return self;
 }
 
-- (void)timerAction:(NSTimer *)timer{
+- (void)timerAction:(NSTimer *)timer {
     if (self.sourceTarget == nil) {
         [timer invalidate];
         timer = nil;
@@ -57,26 +57,26 @@
 @implementation NSTimer (WTUtils)
 
 + (NSTimer *)wt_scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo{
-    WTTimerTarget *timerTarget = [[WTTimerTarget alloc]initWithSelector:aSelector sourceTarget:aTarget];
+    WTTimerTarget *timerTarget = [[WTTimerTarget alloc] initWithSelector:aSelector sourceTarget:aTarget];
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:ti target:timerTarget selector:@selector(timerAction:) userInfo:userInfo repeats:yesOrNo];
     return timer;
 
 }
 
 + (NSTimer *)wt_timerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo{
-    WTTimerTarget *timerTarget = [[WTTimerTarget alloc]initWithSelector:aSelector sourceTarget:aTarget];
+    WTTimerTarget *timerTarget = [[WTTimerTarget alloc] initWithSelector:aSelector sourceTarget:aTarget];
     NSTimer *timer = [NSTimer timerWithTimeInterval:ti target:timerTarget selector:@selector(timerAction:) userInfo:userInfo repeats:yesOrNo];
     return timer;
 }
 
-+ (NSTimer *)wt_scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget userInfo:(id)userInfo repeats:(BOOL)yesOrNo  block:(void(^)(NSTimer *timer))block{
-    WTTimerTarget *timerTarget = [[WTTimerTarget alloc]initWithBlock:block sourceTarget:aTarget];
++ (NSTimer *)wt_scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget userInfo:(id)userInfo repeats:(BOOL)yesOrNo  block:(void(^)(NSTimer *timer))block {
+    WTTimerTarget *timerTarget = [[WTTimerTarget alloc] initWithBlock:block sourceTarget:aTarget];
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:ti target:timerTarget selector:@selector(timerAction:) userInfo:userInfo repeats:yesOrNo];
     return timer;
 }
 
-+ (NSTimer *)wt_timerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget userInfo:(id)userInfo repeats:(BOOL)yesOrNo  block:(void(^)(NSTimer *timer))block{
-    WTTimerTarget *timerTarget = [[WTTimerTarget alloc]initWithBlock:block sourceTarget:aTarget];
++ (NSTimer *)wt_timerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget userInfo:(id)userInfo repeats:(BOOL)yesOrNo  block:(void(^)(NSTimer *timer))block {
+    WTTimerTarget *timerTarget = [[WTTimerTarget alloc] initWithBlock:block sourceTarget:aTarget];
     NSTimer *timer = [NSTimer timerWithTimeInterval:ti target:timerTarget selector:@selector(timerAction:) userInfo:userInfo repeats:yesOrNo];
     return timer;
 }

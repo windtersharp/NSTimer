@@ -65,11 +65,11 @@
 
 - (NSTimer *)timer{
     if (_timer == nil) {
-        __weak typeof(self)weakSelf = self;
-        void(^action)(NSTimer *timer) = ^(NSTimer *timer){
-            __strong typeof(self)strongSelf  = weakSelf;
-            [strongSelf log];
-        };
+//        __weak typeof(self)weakSelf = self;
+//        void(^action)(NSTimer *timer) = ^(NSTimer *timer){
+//            __strong typeof(self)strongSelf  = weakSelf;
+//            [strongSelf log];
+//        };
 //        _timer = [NSTimer wt_scheduledTimerWithTimeInterval:1.0 target:self userInfo:nil repeats:YES block:action];
         _timer = [NSTimer wt_scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(log) userInfo:nil repeats:YES];
         

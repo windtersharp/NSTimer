@@ -13,8 +13,8 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.platform     = :ios, "7.0"
   
-  s.source       = { :git => "https://github.com/windtersharp/NSTimer.git", :tag => "#{s.version}" }
-  s.source_files  = "Timer", "Timer/*.{h,m}"
-  s.public_header_files = "Timer/*.h"
+  s.source                = { :git => "https://github.com/windtersharp/NSTimer.git", :tag => "#{s.version}" }
+  s.source_files          ="Timer/NSTimer+WTUtils.{h,m}"
+  s.public_header_files   ="Timer/NSTimer+WTUtils.h"
 
 end

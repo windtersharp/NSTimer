@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   
   s.name         = "WTTimer"
   s.version      = "0.0.1"
-  s.summary      = "A Category of NSTimer can avoid  memory leak that cause by circular reference."
+  s.summary      = "A Category of NSTimer can avoid  memory leak that caused by circular reference."
   s.description  = "This library provides a category for NSTimer. It can avoid  memory leak that caused by circular reference."
   s.homepage     = "https://github.com/windtersharp/NSTimer"
   s.author       = { "windtersharp" => "windter@126.com" }

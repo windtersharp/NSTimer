@@ -3,6 +3,9 @@
 
 ## This library provides a category for NSTimer. It can avoid  memory leak that caused by circular reference.
 
+## Installation
+NSTimer supports CocoaPods for installing the library in a project.
+
 #### Podfile
 
 To integrate NSTimer into your Xcode project using CocoaPods, specify it in your `Podfile`:

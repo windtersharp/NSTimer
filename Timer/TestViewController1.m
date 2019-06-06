@@ -41,7 +41,7 @@
     [self.view addSubview:button2];
     [button2 addTarget:self action:@selector(buttonClick2:) forControlEvents:UIControlEventTouchDown];
     
-    //调用定时器
+    // 调用定时器
     NSLog(@"定时器地址%p",self.timer);
 
 }

@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, 40, 40)];
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(180, 180, 40, 40)];
     [button setTitle:@"点击" forState:UIControlStateNormal];
     button.backgroundColor = [UIColor purpleColor];
     [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchDown];
@@ -34,40 +34,6 @@
     
     
 }
-
-//- (BOOL)shouldAutorotate{
-//    NSLog(@"支持旋转");
-//    return YES;
-//}
-//
-//- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
-//    
-//    NSLog(@"方向");
-//    return UIInterfaceOrientationMaskPortrait|UIInterfaceOrientationMaskLandscapeRight;
-//}
-//
-//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
-//    NSLog(@"present 时选择的方向");
-//    return UIInterfaceOrientationPortrait;
-//    
-//}
-//
-//
-////设置样式
-//- (UIStatusBarStyle)preferredStatusBarStyle {
-//    return UIStatusBarStyleDefault;
-//}
-//
-////设置是否隐藏
-//- (BOOL)prefersStatusBarHidden {
-//    return NO;
-//}
-//
-////设置隐藏动画
-//- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
-//    return UIStatusBarAnimationNone;
-//}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

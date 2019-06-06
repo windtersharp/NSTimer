@@ -32,7 +32,7 @@
     self = [super init];
     if (self) {
         self.actionBlock = block;
-        self.sourceTarget =sourceTarget;
+        self.sourceTarget = sourceTarget;
     }
     return self;
 }
@@ -41,7 +41,7 @@
     if (self.sourceTarget == nil) {
         [timer invalidate];
         timer = nil;
-    }else{
+    } else {
         if (self.actionBlock) {
             self.actionBlock(timer);
         }else{
@@ -56,14 +56,14 @@
 
 @implementation NSTimer (WTUtils)
 
-+ (NSTimer *)wt_scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo{
++ (NSTimer *)wt_scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo {
     WTTimerTarget *timerTarget = [[WTTimerTarget alloc] initWithSelector:aSelector sourceTarget:aTarget];
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:ti target:timerTarget selector:@selector(timerAction:) userInfo:userInfo repeats:yesOrNo];
     return timer;
 
 }
 
-+ (NSTimer *)wt_timerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo{
++ (NSTimer *)wt_timerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo {
     WTTimerTarget *timerTarget = [[WTTimerTarget alloc] initWithSelector:aSelector sourceTarget:aTarget];
     NSTimer *timer = [NSTimer timerWithTimeInterval:ti target:timerTarget selector:@selector(timerAction:) userInfo:userInfo repeats:yesOrNo];
     return timer;

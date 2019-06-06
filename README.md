@@ -36,8 +36,8 @@ It is the same as the system native method, and you don't need to invoke the inv
 
 ``` objc
    
-  NSTimer  *timer = [NSTimer wt_scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(log) userInfo:nil repeats:YES];
-  [timer invalidate]; // Not necessary
+NSTimer  *timer = [NSTimer wt_scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(log) userInfo:nil repeats:YES];
+[timer invalidate]; // Not necessary
 
 ```
 

@@ -5,8 +5,6 @@
 
 ## Installation
 
----
-
 NSTimer supports CocoaPods for installing the library in a project.
 
 #### Podfile
@@ -29,8 +27,6 @@ $ pod install
 
 
 ## Usage
-
----
 
 It is the same as the system native method, and you don't need to invoke the invalidate method in timer manually,
 

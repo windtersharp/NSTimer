@@ -1,6 +1,7 @@
 
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/WTTimer.svg)](https://img.shields.io/cocoapods/v/WTTimer.svg)
-
+[![License](https://img.shields.io/cocoapods/l/WTTimer.svg?style=flat)](https://cocoapods.org/pods/WTTimer)
+[![Platform](https://img.shields.io/cocoapods/p/WTTimer.svg?style=flat)](https://cocoapods.org/pods/WTTimer)
 ## This library provides a category for NSTimer. You don't need to invoke the invalidate method in timer manually, which can avoid  memory leak that caused by circular reference.
 
 ## Installation
